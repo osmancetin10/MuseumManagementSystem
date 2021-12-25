@@ -1,0 +1,10 @@
+﻿@{
+    var culture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureList = LocOptions.Value.SupportedUICultures.Select(x => new SelectListItem { Value = x.Name, Text = x.Name }).ToList();
+}
+
+<div>
+    <form asp-action="CultureManagement" asp-controller="Home" method="post">
+        <select name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureList" onchange="this.form.submit();"></select>
+    </form>
+</div>
