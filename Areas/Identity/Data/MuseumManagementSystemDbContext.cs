@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MuseumManagementSystem.Areas.Identity.Data;
+using MuseumManagementSystem.Models;
 
 namespace MuseumManagementSystem.Data
 {
@@ -15,6 +16,10 @@ namespace MuseumManagementSystem.Data
             : base(options)
         {
         }
+
+        public DbSet<Muze> Muze { get; set; }
+
+        public DbSet<Eser> Eser { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

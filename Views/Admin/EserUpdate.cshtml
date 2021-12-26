@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Eser Ekle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model EserMuzeler
+<div class="container mt-5">
+    <h1 style="text-align:center;">Hayvan Düzenle</h1>
+    <form class="w-75 m-auto" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Eser.EserAdi"></label>
+            <input asp-for="Eser.EserAdi" class="form-control" placeholder="@Model.Eser.EserAdi" />
+            <span asp-validation-for="Eser.EserAdi" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Eser.EserYili"></label>
+            <input asp-for="Eser.EserYili" class="form-control" placeholder="@Model.Eser.EserYili" />
+            <span asp-validation-for="Eser.EserYili" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <select asp-for="Eser.MuzeId" class="form-control">
+                <option selected>Müze Adını Seçin</option>
+                @foreach (var muze in Model.Muzeler)
+                {
+                    <option value="@muze.MuzeId" for="id">@muze.MuzeAdi</option>
+                }
+            </select>
+            <span asp-validation-for="Eser.Muze.MuzeAdi" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Fotoğraf Yükle</label>
+            <input class="form-control" type="file" id="formFile" name="hayvanFoto">
+        </div>
+        <button type="submit" class="btn btn-primary float-right" asp-route-id="@Model.Eser.EserId">Kaydet</button>
+    </form>
+
+</div>
+@*<div class="container mt-2">
+    <p class="w-75 text-primary text-center">@ViewBag.Mesaj</p>
+    <p class="w-75 text-danger text-center">@ViewBag.Error</p>
+</div>*@
+

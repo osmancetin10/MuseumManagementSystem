@@ -17,6 +17,7 @@ namespace MuseumManagementSystem.Models
         public int EserYili { get; set; }
         public string Foto { get; set; }
 
+        public int MuzeId { get; set; }
         public virtual Muze Muze { get; set; }
     }
 }

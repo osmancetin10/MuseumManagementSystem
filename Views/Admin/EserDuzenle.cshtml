@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Eser Düzenle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model EserlerMuzeler
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Eserler</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Resim</th>
+                            <th>Adı</th>
+                            <th>Yılı</th>
+                            <th>Bulunduğu Müze</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ int i = 0;}
+                        @foreach (var eser in Model.Eserler)
+                        {
+
+                        <tr>
+                            <td><img src="@eser.Foto" width="50" height="50" /></td>
+                            <td>@eser.EserAdi</td>
+                            <td>@eser.EserYili</td>
+                            <td>@Model.Muzeler.Where(x => x.MuzeId == eser.MuzeId).FirstOrDefault().MuzeAdi</td>
+                            <td>
+                                <a class="btn btn-danger btn-sm" asp-controller="Admin" asp-action="EserSil" asp-route-id="@eser.EserId">Sil</a>
+                                <a class="btn btn-info btn-sm" asp-controller="Admin" asp-action="EserUpdate" asp-route-id="@eser.EserId">Güncelle</a>
+                            </td>
+                        </tr>
+                            i++;
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+

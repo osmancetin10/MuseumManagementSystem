@@ -15,9 +15,9 @@ namespace MuseumManagementSystem.Models
         [Display(Name = "Müze Adresi")]
         [Required(ErrorMessage = "Müze Adresi Girilmelidir")]
         public string MuzeAdresi { get; set; }
-        [Display(Name = "Ziyaretçi Sayısı")]
+        [Display(Name = "Ziyaretçi Sayısı (Yıllık)")]
         [Required(ErrorMessage = "Ziyaretçi Sayısı Girilmelidir")]
-        public string ZiyaretciSayisi { get; set; }
+        public int ZiyaretciSayisi { get; set; }
         public string Foto { get; set; }
 
         public virtual List<Eser> Eserler { get; set; }
