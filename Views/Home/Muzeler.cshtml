@@ -1,0 +1,30 @@
+﻿
+
+@model List<Muze>
+@{
+    ViewData["Title"] = "Müzeler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row mt-5">
+    <div class="row">
+        @foreach (var muze in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="@muze.Foto" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            @muze.MuzeAdi
+                        </h4>
+                        <h5>Ziyaretçi Sayısı(Yıllık): @muze.ZiyaretciSayisi</h5>
+                    </div>
+                    <div class="card-footer">
+                        Müze Adresi: @muze.MuzeAdresi
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

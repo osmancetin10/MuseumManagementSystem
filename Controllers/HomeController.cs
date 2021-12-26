@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MuseumManagementSystem.Data;
 using MuseumManagementSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace MuseumManagementSystem.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly MuseumManagementSystemDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, MuseumManagementSystemDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -43,6 +46,20 @@ namespace MuseumManagementSystem.Controllers
                 new CookieOptions { Expires = DateTimeOffset.Now.AddDays(30) });
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Muzeler()
+        {
+            var viewModel = _context.Muze.ToList();
+            return View(viewModel);
+        }
+
+        public IActionResult Eserler()
+        {
+            var viewModel = new EserlerMuzeler();
+            viewModel.Eserler = _context.Eser.ToList();
+            viewModel.Muzeler = _context.Muze.ToList();
+            return View(viewModel);
         }
     }
 }

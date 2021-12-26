@@ -1,0 +1,29 @@
+﻿
+
+@model EserlerMuzeler
+@{
+    ViewData["Title"] = "Eserler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row mt-5">
+    <div class="row">
+        @foreach (var eser in Model.Eserler)
+        {
+            <div class="">
+                <div class="card h-100">
+                    <img class="card-img-top" src="@eser.Foto" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            @eser.EserAdi
+                        </h4>
+                        <h5>Eser Yılı: @eser.EserYili</h5>
+                    </div>
+                    <div class="card-footer">
+                        Bulunduğu Müze: @Model.Muzeler.Where(x => x.MuzeId == eser.MuzeId).FirstOrDefault().MuzeAdi
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
