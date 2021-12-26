@@ -117,28 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InvalidLoginAttempt" xml:space="preserve">
-    <value>Geçersiz oturum açma girişimi</value>
+  <data name="HomePage" xml:space="preserve">
+    <value>Home Page</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Giriş Yap</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Şifre</value>
-  </data>
-  <data name="RegisterAsANewUser" xml:space="preserve">
-    <value>Üye Değil misin?</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Beni Hatırla</value>
-  </data>
-  <data name="UseALocalAccountToLogIn" xml:space="preserve">
-    <value>Giriş için formu doldurun.</value>
-  </data>
-  <data name="UserAccountLockedOut" xml:space="preserve">
-    <value>Kullanıcı hesabı kilitlendi</value>
-  </data>
-  <data name="UserLoggedIn" xml:space="preserve">
-    <value>Giriş Başarılı.</value>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
   </data>
 </root>

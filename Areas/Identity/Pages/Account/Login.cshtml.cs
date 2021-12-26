@@ -54,7 +54,7 @@ namespace MuseumManagementSystem.Areas.Identity.Pages.Account
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            //[Display(Name = "Remembere")]
             public bool RememberMe { get; set; }
         }
 
@@ -97,12 +97,13 @@ namespace MuseumManagementSystem.Areas.Identity.Pages.Account
                 }
                 if (result.IsLockedOut)
                 {
-                    _logger.LogWarning("User account locked out.");
+                    _logger.LogWarning(_stringLocalizer["UserAccountLockedOut"].Value);
                     return RedirectToPage("./Lockout");
                 }
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    //_logger.LogWarning(_stringLocalizer["InvalidLoginAttempt"].Value);
                     return Page();
                 }
             }

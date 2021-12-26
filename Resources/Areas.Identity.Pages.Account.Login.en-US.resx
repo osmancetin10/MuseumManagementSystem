@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Log In</value>
   </data>
@@ -126,8 +129,14 @@
   <data name="RegisterAsANewUser" xml:space="preserve">
     <value>Register as a new user</value>
   </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
   <data name="UseALocalAccountToLogIn" xml:space="preserve">
     <value>Use a local account to log in.</value>
+  </data>
+  <data name="UserAccountLockedOut" xml:space="preserve">
+    <value>User account locked out.</value>
   </data>
   <data name="UserLoggedIn" xml:space="preserve">
     <value>User logged in.</value>
