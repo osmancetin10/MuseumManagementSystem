@@ -36,6 +36,9 @@ namespace MuseumManagementSystem.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+            public string Ad { get; set; }
+            public string Soyad { get; set; }
+            public string Adres { get; set; }
         }
 
         private async Task LoadAsync(MuseumManagementSystemUser user)

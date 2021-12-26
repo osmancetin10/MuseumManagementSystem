@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Kullanıcılar";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model List<MuseumManagementSystemUser>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Kullanıcılar</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr class="text-center">
+                        <th>Adı</th>
+                        <th>Soyadı</th>
+                        <th>E-mail</th>
+                        <th>Rolü</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int i = 0;}
+                    @foreach (var kullanici in Model)
+                    {
+
+                        <tr class="text-center">
+                            <td>@kullanici.Ad</td>
+                            <td>@kullanici.Soyad</td>
+                            <td>@kullanici.Email</td>
+                            <td>@kullanici.Rol</td>
+                            <td class="text-center"><a class="btn btn-danger btn-sm" asp-controller="Admin" asp-action="RolDegistir" asp-route-id="@kullanici.Id">Değiştir</a></td>
+                        </tr>
+                        i++;
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

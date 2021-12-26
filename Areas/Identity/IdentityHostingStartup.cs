@@ -15,14 +15,7 @@ namespace MuseumManagementSystem.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
-                services.AddDbContext<MuseumManagementSystemDbContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("MuseumManagementSystemDbContextConnection")));
-
-                services.AddDefaultIdentity<MuseumManagementSystemUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<MuseumManagementSystemDbContext>();
-            });
+           
         }
     }
 }

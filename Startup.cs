@@ -1,12 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using MuseumManagementSystem.Areas.Identity.Data;
+using MuseumManagementSystem.Data;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -56,6 +60,22 @@ namespace MuseumManagementSystem
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization();
             #endregion Localization
+
+            services.AddDbContext<MuseumManagementSystemDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("MuseumManagementSystemDbContextConnection")));
+            services.AddDefaultIdentity<MuseumManagementSystemUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<MuseumManagementSystemDbContext>();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 3;
+                options.Password.RequiredUniqueChars = 1;
+            });
 
             services.AddControllersWithViews();
             services.AddRazorPages();

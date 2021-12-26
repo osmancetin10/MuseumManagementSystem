@@ -49,14 +49,14 @@ namespace MuseumManagementSystem.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "8de73b8c-6684-40d5-9691-56378d73b470",
+                            ConcurrencyStamp = "af693fb8-baf9-4c45-b1ad-4e153492ba51",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "80f23306-98c5-4f7f-bf21-02b775bdce08",
+                            ConcurrencyStamp = "44eea4e3-47ea-4756-aae4-28c6cb69107c",
                             Name = "Uye",
                             NormalizedName = "UYE"
                         });
@@ -260,13 +260,13 @@ namespace MuseumManagementSystem.Migrations
                         {
                             Id = "41D720B7-7165-4997-98ED-0F6E889804C5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "74c8fa0a-2e48-4d27-adca-00a3ff463d8b",
+                            ConcurrencyStamp = "d2225ce3-10f5-4f94-aca9-7f493e096113",
                             Email = "b211210373@sakarya.edu.tr",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "B211210373@SAKARYA.EDU.TR",
                             NormalizedUserName = "B211210373@SAKARYA.EDU.TR",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEttxDtRZ6eWzfQ0pGbWOsf1+JC0Rys5MX0Qk6hY4ZZew53d4H6opFpVgT/0gLzYbw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGOzT9lc3lpUWBBMsUrkhi868TTXIK1V4ztY6QteDfANEXzmYch1pUAW4+8EBMoxBg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -276,13 +276,13 @@ namespace MuseumManagementSystem.Migrations
                         {
                             Id = "23477228-D07E-4B3E-A41D-841495F23AF0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ef91d50e-0c1d-49c0-85ac-2e0e9141e02f",
+                            ConcurrencyStamp = "fe583524-73a7-4908-aca3-daee152f037f",
                             Email = "b211210376@sakarya.edu.tr",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "B211210376@SAKARYA.EDU.TR",
                             NormalizedUserName = "B211210376@SAKARYA.EDU.TR",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBmU4MUZMu3+9iasN2PhNGq4X+gmOe5qPT3++aqCa3U7WSoWdvd8sGhFUyDPLGhedA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFPEh6/8aKqMH6hvedS5WKPtPFlihC62EfO5OhESGRHXeUbz1LanzdvvEMku2eS8mg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

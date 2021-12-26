@@ -61,6 +61,10 @@ namespace MuseumManagementSystem.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            [Required(ErrorMessage = "İsim girmek zorunludur")]
+            public string Ad { get; set; }
+            [Required(ErrorMessage = "Soyisim girmek zorunludur")]
+            public string Soyad { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -75,10 +79,17 @@ namespace MuseumManagementSystem.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new MuseumManagementSystemUser { UserName = Input.Email, Email = Input.Email };
+                var user = new MuseumManagementSystemUser { UserName = Input.Email, Email = Input.Email, Ad = Input.Ad, Soyad = Input.Soyad };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    try
+                    {
+                        await _userManager.AddToRoleAsync(user, "UYE");
+                    }catch(Exception e)
+                    {
+                        var ex = e;
+                    }
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
